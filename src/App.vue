@@ -1,14 +1,26 @@
 <template>
-  <active-user></active-user>
-  <user-data></user-data>
+  <user-data @add-user="addUser"></user-data>
+  <active-user :name="usersData.name" :age="usersData.age"></active-user>
 </template>
 
 <script>
 export default {
   data() {
-    return {};
+    return {
+      usersData: {
+        name: "",
+        age: "",
+      },
+    };
   },
-  methods: {},
+  methods: {
+    addUser(userName, userAge) {
+      this.usersData = {
+        name: userName,
+        age: userAge,
+      };
+    },
+  },
 };
 </script>
 <style>
@@ -68,5 +80,10 @@ header {
   background-color: #ec3169;
   border-color: #ec3169;
   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.26);
+}
+section {
+  width: 50%;
+  margin: auto;
+  padding: 30px;
 }
 </style>
