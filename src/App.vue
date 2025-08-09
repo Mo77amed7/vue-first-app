@@ -1,44 +1,14 @@
 <template>
-  <friend-contact
-    v-for="friend in friends"
-    :key="friend.mail"
-    :name="friend.name"
-    :id="friend.id"
-    :age="friend.age"
-    :mail="friend.mail"
-    @toggle-favorite="toggleFavor(friend.id)"
-    :is-favorable="friend.isFavorable"
-  ></friend-contact>
+  <active-user></active-user>
+  <user-data></user-data>
 </template>
 
 <script>
 export default {
   data() {
-    return {
-      friends: [
-        {
-          name: "Mohamed",
-          id: 1,
-          age: 25,
-          mail: "muhamd34@gmail.com",
-          isFavorable: true,
-        },
-        {
-          name: "Ahmed",
-          id: 2,
-          age: 26,
-          mail: "ahmmad34@gmail.com",
-          isFavorable: false,
-        },
-      ],
-    };
+    return {};
   },
-  methods: {
-    toggleFavor(friendId) {
-      const chosenFriend = this.friends.find((friend) => friend.id === friendId);
-      chosenFriend.isFavorable = !chosenFriend.isFavorable;
-    },
-  },
+  methods: {},
 };
 </script>
 <style>
